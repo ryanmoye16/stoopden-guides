@@ -59,6 +59,8 @@ gh api /repos/ryanmoye16/stoopden-guides/pages
 
 You want `html_url` = `https://ryanmoye16.github.io/stoopden-guides/` and `source.branch` = `main`, `source.path` = `/`. `cname` should be empty.
 
+If `gh api` returns **403 Resource not accessible by integration**, the token has no Pages write scope (common for GitHub App tokens). Enable the same settings in the GitHub UI instead: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**. Leave the custom domain field empty.
+
 First build can take a few minutes. A `.nojekyll` file is in the root so GitHub does not run Jekyll on the HTML.
 
 ### Custom domain — out of scope
