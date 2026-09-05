@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Stoopden">
+  <rect width="32" height="32" rx="8" fill="#5B6B52"/>
+  <path d="M7 25V15.5c0-5 4-9 9-9s9 4 9 9V25" fill="none" stroke="#F6F1E8" stroke-width="2.1" stroke-linecap="round"/>
+  <circle cx="12.2" cy="12.2" r="1.15" fill="#F6F1E8"/>
+  <circle cx="19.8" cy="12.2" r="1.15" fill="#F6F1E8"/>
+</svg>
