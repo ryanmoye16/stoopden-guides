@@ -1333,7 +1333,7 @@ main {
 .guide-hero::after {
   content: "";
   display: block;
-  width: min(100% - 2.5rem, 46rem);
+  width: min(100% - 2.5rem, 72rem);
   margin: 1.15rem auto 0;
   height: 5px;
   background:
@@ -1360,11 +1360,11 @@ main {
 }
 
 .guide-hero-inner {
-  width: min(100% - 2.5rem, 66rem);
-  max-width: 66rem;
+  width: min(100% - 2.5rem, 72rem);
+  max-width: 72rem;
   display: grid;
-  grid-template-columns: 14.25rem var(--measure);
-  gap: 0 2.6rem;
+  grid-template-columns: 16.5rem minmax(0, 48rem);
+  gap: 0 2.4rem;
   justify-content: center;
 }
 
@@ -1400,7 +1400,7 @@ main {
   line-height: 1.08;
   letter-spacing: -0.035em;
   margin: 0 0 0.75rem;
-  max-width: 18ch;
+  max-width: 22ch;
   font-variation-settings: var(--display);
   text-wrap: balance;
 }
@@ -1456,12 +1456,12 @@ main {
 
 .guide-layout {
   display: grid;
-  grid-template-columns: 14.25rem var(--measure);
-  gap: 1.6rem 2.6rem;
+  grid-template-columns: 16.5rem minmax(0, 48rem);
+  gap: 1.6rem 2.4rem;
   justify-content: center;
   align-items: start;
-  width: min(100% - 2.5rem, 66rem);
-  margin: 1.55rem auto 0;
+  width: min(100% - 2.5rem, 72rem);
+  margin: 1.35rem auto 0;
 }
 
 .toc {
@@ -1485,6 +1485,27 @@ main {
     linear-gradient(var(--sage), var(--sage)) 0 0 / 42% 4px no-repeat,
     linear-gradient(var(--sage), var(--sage)) 0 7px / 68% 4px no-repeat,
     linear-gradient(var(--sage), var(--sage)) 0 14px / 100% 4px no-repeat;
+}
+
+.toc:has(.toc-mark)::before {
+  content: none;
+  display: none;
+}
+
+.toc-mark {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  margin: 0 0 0.75rem;
+  border-radius: 0.7rem;
+  color: var(--sage-deep);
+  background: var(--sage-wash);
+}
+
+.toc-mark svg {
+  width: 1.85rem;
+  height: 1.85rem;
 }
 
 .toc-label {
@@ -1536,6 +1557,30 @@ main {
   color: var(--ink-mute);
 }
 
+.toc-next {
+  margin: 0.85rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px dashed color-mix(in srgb, var(--sage) 45%, var(--rule));
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--ink-mute);
+}
+
+.toc-next a {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.toc-next a::before {
+  content: none;
+}
+
 .toc ol {
   list-style: none;
   margin: 0;
@@ -1583,7 +1628,7 @@ main {
 
 .guide .prose {
   width: auto;
-  max-width: var(--measure);
+  max-width: none;
   margin: 0;
   overflow-x: visible;
 }
@@ -1620,6 +1665,57 @@ main {
   color: var(--sage-deep);
   font-style: italic;
   font-variation-settings: var(--display-soft);
+}
+
+.glance {
+  font-family: var(--font-body);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem 1.05rem;
+  margin: 0 0 1.85rem;
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.35rem 1.1rem;
+  align-items: start;
+}
+
+.glance-label {
+  margin: 0;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage-deep);
+  padding-top: 0.15rem;
+}
+
+.glance ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.glance li,
+.glance li + li {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 4.4rem minmax(0, 1fr);
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.glance strong {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  padding-top: 0.16rem;
 }
 
 .prose h2 {
@@ -1891,14 +1987,52 @@ main {
     content: none;
   }
 
-  .toc a[aria-current="location"],
-  .toc a:hover {
+  .toc ol a[aria-current="location"],
+  .toc ol a:hover {
     border-color: var(--sage);
     background: var(--sage-wash);
+  }
+
+  .toc-next {
+    margin-top: 0.55rem;
+    padding-top: 0.55rem;
+  }
+
+  .toc-next a {
+    display: inline;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    background: none;
+    border-radius: 0;
+  }
+
+  .toc-next a::before {
+    content: none;
+  }
+
+  .product-slot-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .glance {
+    grid-template-columns: 1fr;
   }
 }
 
 /* Product slots — empty on purpose */
+
+.product-slot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin: 1.7rem 0;
+}
+
+.product-slot-pair .product-slot {
+  margin: 0;
+}
 
 .product-slot {
   position: relative;
