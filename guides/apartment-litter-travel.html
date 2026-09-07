@@ -8,9 +8,11 @@
   <link rel="canonical" href="https://stoopden.com/guides/apartment-litter-travel.html">
   <link rel="icon" href="../assets/stoopden-favicon.png" type="image/png">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/stoopden-favicon.png">
+  <meta name="theme-color" content="#FCF7EE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/site.css">
 </head>
@@ -20,20 +22,27 @@
   <div class="wrap header-inner">
     <a class="logo" href="../index.html">
       <img class="logo-img" src="../assets/stoopden-logo.png" alt="Stoopden" width="169" height="42">
+      <span class="logo-issue">Guides</span>
     </a>
     <input id="nav-toggle" class="nav-toggle" type="checkbox">
-    <label class="nav-toggle-btn" for="nav-toggle">Menu</label>
+    <label class="nav-toggle-btn" for="nav-toggle">
+      <span class="nav-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="nav-toggle-text">Menu</span>
+    </label>
     <nav class="site-nav" aria-label="Primary">
+      <p class="nav-kicker">In the den</p>
       <div class="nav-hubs">
-        <a href="../index.html#feed">Feed</a>
-        <a href="../index.html#play">Play</a>
-        <a href="../index.html#groom">Groom</a>
-        <a href="../index.html#rest">Rest</a>
-        <a href="../index.html#travel" aria-current="page">Travel</a>
+        <a href="../index.html#feed"><span>01</span>Feed</a>
+        <a href="../index.html#play"><span>02</span>Play</a>
+        <a href="../index.html#groom"><span>03</span>Groom</a>
+        <a href="../index.html#rest"><span>04</span>Rest</a>
+        <a href="../index.html#travel" aria-current="page"><span>05</span>Travel</a>
       </div>
-      <a href="../guides/how-we-pick.html">How we pick</a>
-      <a href="../about.html">About</a>
-      <a href="../disclosure.html">Disclosure</a>
+      <div class="nav-meta">
+        <a href="../guides/how-we-pick.html">How we pick</a>
+        <a href="../about.html">About</a>
+        <a href="../disclosure.html">Disclosure</a>
+      </div>
     </nav>
     <label class="nav-scrim" for="nav-toggle" aria-label="Close menu"></label>
   </div>
@@ -41,20 +50,30 @@
 
 <main id="main">
 
-<div class="guide-hero">
-  <div class="wrap--narrow">
+
+<article class="guide">
+<header class="guide-hero">
+  <div class="wrap guide-hero-inner">
     <p class="eyebrow">Travel · Litter</p>
     <h1>Litter is a neighbor problem, a cat problem, and a hallway problem.</h1>
     <p class="lede">A lid can help odor and scatter. It can also make a cat refuse the box. Travel adds a third constraint: what you will actually put in a car.</p>
     <p class="affiliate-line">As an Amazon Associate I earn from qualifying purchases. <a href="../disclosure.html">Full disclosure</a>.</p>
   </div>
-</div>
-<article class="guide">
-  <div class="prose">
+</header>
+  <div class="guide-layout">
+    <nav class="toc" aria-label="On this page">
+      <p class="toc-label">In this guide</p>
+      <ol>
+        <li><a href="#open-covered-convertible">Open, covered, convertible</a></li>
+        <li><a href="#mats-and-placement">Mats and placement</a></li>
+        <li><a href="#travel-is-a-different-object">Travel is a different object</a></li>
+      </ol>
+    </nav>
+    <div class="prose">
 
 <p>Apartments concentrate smell and tracking. You cannot push a box into a basement you do not have. The analysis is: will the cat use it, will the mat catch the exit run, and can you scoop daily in a space you also live in.</p>
 
-<h2>Open, covered, convertible</h2>
+<h2 id="open-covered-convertible">Open, covered, convertible</h2>
 <p>Open trays are easy to scoop and easy for nervous cats. They also throw litter and odor into the room.</p>
 <p>Covered boxes trap some scatter and some smell — and they trap humidity if you skip scoops. Some cats feel cornered. A convertible lid (a cover you can run with or without) is a way to test the cat before you commit to a cave.</p>
 <p>Top-entry designs reduce tracking for some cats and are a wall for some older joints. If you have a senior cat or a small dog who should not snack in the box, top-entry is a trade, not a default.</p>
@@ -68,7 +87,7 @@
   </tbody>
 </table>
 
-<h2>Mats and placement</h2>
+<h2 id="mats-and-placement">Mats and placement</h2>
 <p>A mat only works if it is longer than the cat’s first three steps out. Tiny mats are doormats for humans, not for paws. Place the box where the cat has an exit toward the room, not a dead end behind a door that slams.</p>
 <p>Keep it away from food and from the HVAC vent that will perfume the whole apartment. A bathroom works if the cat is not trapped when someone showers. A hallway niche works if people will not kick it.</p>
 
@@ -87,7 +106,7 @@
   <p><span class="btn btn--amazon is-disabled" role="link" aria-disabled="true">Amazon link coming</span></p>
 </aside>
 
-<h2>Travel is a different object</h2>
+<h2 id="travel-is-a-different-object">Travel is a different object</h2>
 <p>Weekend travel with a cat is not “the same box, smaller.” Folding boxes leak. Disposable trays tip in a car. A hard-sided, lower-profile box that you can line and scoop in a hotel bathroom is more honest than a travel gimmick.</p>
 <p>If the cat will only go at home, do not surprise them with a new cave on the morning of a drive. Practice with the travel tray at home first. If they refuse, you need a plan with more stops, not a stronger air freshener.</p>
 <div class="callout"><strong>Odor honesty</strong><p>No lid replaces scooping. If the apartment smells, the first fix is frequency and a box that is actually big enough — not a new spray, and not a promise we will not make.</p></div>
@@ -101,6 +120,7 @@
       </ul>
     </div>
   </div>
+  </div>
 </article>
 
 </main>
@@ -108,7 +128,7 @@
   <div class="wrap footer-grid">
     <div>
       <a class="footer-brand" href="../index.html">
-        <img class="footer-logo" src="../assets/stoopden-logo.png" alt="Stoopden" width="129" height="32">
+        <img class="footer-logo" src="../assets/stoopden-logo-inverse.png" alt="Stoopden" width="169" height="42">
       </a>
       <p>Everyday pet gear for home and on the go. Short analysis for US cats and small dogs living in apartments — not a marketplace.</p>
     </div>
@@ -139,5 +159,6 @@
   </div>
 </footer>
 
+<script src="../js/site.js" defer></script>
 </body>
 </html>

@@ -25,7 +25,7 @@ Static HTML/CSS guide site for **US cats and small dogs** in apartments. Hubs: f
 | `disclosure.html` | Amazon Associates |
 | `privacy.html` | Privacy |
 
-Shared stylesheet: `css/site.css`. Mobile nav is CSS-only (checkbox). In-page links are relative so local preview matches production. Canonicals, sitemap, and robots use `https://stoopden.com/`.
+Shared stylesheet: `css/site.css`. Mobile nav is CSS-only (checkbox). `js/site.js` is optional: it highlights the in-page table of contents and a scrolled header. The site still works with JavaScript off. In-page links are relative so local preview matches production. Canonicals, sitemap, and robots use `https://stoopden.com/`. Brand wordmark, inverse, and favicon live in `assets/`.
 
 ## GitHub Pages (root of `main`)
 
