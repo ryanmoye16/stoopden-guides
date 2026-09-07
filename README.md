@@ -56,7 +56,7 @@ If `gh api` returns **403 Resource not accessible by integration**, enable the s
 
 Every page includes: **As an Amazon Associate I earn from qualifying purchases.**
 
-Product slots are labeled `ASIN_TODO_…` with a disabled **Amazon link coming** control. There are no live Amazon URLs and no Associates tag yet.
+Product slots are labeled `ASIN_TODO_…` with a disabled **Link when we name one** control. There are no live Amazon URLs and no Associates tag yet. Public cards read as finished criteria holds — not dashed stubs.
 
 When Ryan has a tag and real ASINs:
 
