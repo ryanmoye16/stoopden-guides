@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ryanmoye16.github.io/stoopden-guides/sitemap.xml
+Sitemap: https://stoopden.com/sitemap.xml
