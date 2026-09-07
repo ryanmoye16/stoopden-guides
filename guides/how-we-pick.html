@@ -88,7 +88,6 @@
         <li><a href="#what-we-will-not-write">What we will not write</a></li>
         <li><a href="#how-a-page-gets-updated-later">How a page gets updated later</a></li>
         </ol>
-        <p class="toc-next">Keep reading <a href="../about.html">About Stoopden Guides</a></p>
       </nav>
     </div>
     <div class="guide-main">
@@ -128,19 +127,19 @@
 </ul>
 
 <h2 id="how-product-slots-work">How product slots work</h2>
-<p>Each recommended <em>type</em> of object gets a criteria card. Editors keep an <code>ASIN_TODO_…</code> ID in the HTML. Until a real ASIN and Associates tag are filled in:</p>
+<p>Each recommended <em>type</em> of object gets a criteria card. Until a real ASIN and Associates tag are filled in:</p>
 <ul>
   <li>The card is a finished hold: criteria only, no invented listing.</li>
-  <li>The control reads <strong>Link when we name one</strong>.</li>
-  <li>The control is disabled. There is no Amazon URL to click.</li>
+  <li>The hold reads <strong>Link when we name one</strong>.</li>
+  <li>That line is not a button. There is no Amazon URL to click.</li>
   <li>We do not invent prices, review counts, star averages, or ASINs.</li>
 </ul>
 
-<aside class="product-slot" id="ASIN_TODO_EXAMPLE_SLOT">
-  <p class="product-slot__id"><span>Criteria only</span> <code>ASIN_TODO_EXAMPLE_SLOT</code></p>
+<aside class="product-slot" aria-label="Example criteria card">
+  <p class="product-slot__id"><span>Criteria only</span></p>
   <h3>Example criteria card</h3>
-  <p>This is not a product recommendation. It shows the public card: a type-level title, the criteria we will hold, and a disabled control. The ID stays in the HTML for editors. Do not invent an ASIN to decorate the page.</p>
-  <p><span class="btn btn--amazon is-disabled" role="link" aria-disabled="true">Link when we name one</span></p>
+  <p>This is not a product recommendation. It shows the public card: a type-level title, the criteria we will hold, and a hold state instead of an Amazon link. We do not invent an ASIN to decorate the page.</p>
+  <p class="product-slot__hold" aria-disabled="true">Link when we name one <span class="visually-hidden">(not a link)</span></p>
 </aside>
 
 <h2 id="what-we-will-not-write">What we will not write</h2>

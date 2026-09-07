@@ -20,7 +20,7 @@ Static HTML/CSS guide site for **US cats and small dogs** in apartments. Hubs: f
 | `guides/sofa-ramp-small-dogs.html` | Rest |
 | `guides/walk-water-bottle-kit.html` | Travel |
 | `guides/apartment-litter-travel.html` | Travel |
-| `guides/how-we-pick.html` | Method |
+| `guides/how-we-pick.html` | Method (canonical). `/how-we-pick.html` redirects here. |
 | `about.html` | About |
 | `disclosure.html` | Amazon Associates |
 | `privacy.html` | Privacy |
@@ -56,7 +56,7 @@ If `gh api` returns **403 Resource not accessible by integration**, enable the s
 
 Every page includes: **As an Amazon Associate I earn from qualifying purchases.**
 
-Product slots are labeled `ASIN_TODO_…` with a disabled **Link when we name one** control. There are no live Amazon URLs and no Associates tag yet. Public cards read as finished criteria holds — not dashed stubs.
+Product slots keep `ASIN_TODO_…` IDs in the HTML for editors. Public cards show a **Criteria only** pill and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL. There is no Associates tag yet.
 
 When Ryan has a tag and real ASINs:
 

@@ -20,6 +20,9 @@
     if (typeof ResizeObserver === "function") {
       new ResizeObserver(syncStickyOffset).observe(header);
     }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(syncStickyOffset);
+    }
   }
 
   document.addEventListener("keydown", function (event) {
