@@ -735,8 +735,22 @@ main {
   height: auto;
   overflow: visible;
   z-index: 0;
-  box-shadow: inset 0 3px 0 var(--sage);
+  box-shadow: none;
   transition: transform var(--ease), border-color var(--ease);
+}
+
+.hub-card::after,
+.guide-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--sage);
+  border-radius: var(--radius) var(--radius) 0 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hub-card::before {
@@ -824,38 +838,13 @@ main {
   padding-top: 0.45rem;
 }
 
-/* Same 1px rule + inset top accent. Hub identity is mark + wash, not a broken border. */
-.hub-card[data-hub="feed"] {
-  background:
-    linear-gradient(165deg, color-mix(in srgb, var(--sage) 16%, var(--paper)), var(--paper) 62%);
-}
-
-.hub-card[data-hub="play"] {
-  background:
-    repeating-linear-gradient(
-      -18deg,
-      transparent,
-      transparent 9px,
-      rgba(112, 122, 91, 0.11) 9px,
-      rgba(112, 122, 91, 0.11) 10px
-    ),
-    var(--paper);
-}
-
-.hub-card[data-hub="groom"] {
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--sage) 18%, var(--paper)) 1.15rem, var(--paper) 1.15rem);
-}
-
-.hub-card[data-hub="rest"] {
-  background:
-    radial-gradient(90% 80% at 100% 0%, rgba(112, 122, 91, 0.2), transparent 52%),
-    var(--paper);
-}
-
+/* Identity is the mark, not a per-hub border. Same paper + same sage cap on every card. */
+.hub-card[data-hub="feed"],
+.hub-card[data-hub="play"],
+.hub-card[data-hub="groom"],
+.hub-card[data-hub="rest"],
 .hub-card[data-hub="travel"] {
-  background:
-    linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--cream-deep) 45%, var(--paper)));
+  background: var(--paper);
 }
 
 .hub-card[data-hub="feed"] .hub-mark { background: var(--sage); }
@@ -1123,7 +1112,7 @@ main {
   min-height: 0;
   height: auto;
   overflow: visible;
-  box-shadow: inset 0 3px 0 var(--sage);
+  box-shadow: none;
   transition: transform var(--ease), border-color var(--ease);
 }
 
@@ -1137,10 +1126,6 @@ main {
   opacity: 0;
   transform: translate(0, 0);
   transition: transform var(--ease), opacity var(--ease);
-}
-
-.guide-card::after {
-  content: none;
 }
 
 .guide-card:hover,
