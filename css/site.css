@@ -20,6 +20,7 @@
   --max: 74rem;
   --measure: 39rem;
   --header-h: 4.35rem;
+  --sticky-offset: 7.35rem;
   --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
   --display: "SOFT" 22, "WONK" 0, "opsz" 144;
@@ -37,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--sticky-offset);
 }
 
 body {
@@ -125,8 +127,8 @@ main {
   /* No backdrop-filter/transform: those trap position:fixed nav inside the header. */
   background: color-mix(in srgb, var(--cream) 94%, white);
   border-top: 3px solid var(--sage);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
+  border-bottom: 1px solid var(--rule);
+  transition: box-shadow var(--ease), background var(--ease);
 }
 
 .site-header.is-scrolled {
@@ -281,17 +283,17 @@ main {
 }
 
 .disclosure-bar {
-  border-bottom: 1px solid var(--rule);
-  background: color-mix(in srgb, var(--sage-wash) 70%, var(--cream));
+  border-top: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--sage-wash) 88%, var(--cream));
 }
 
 .disclosure-bar .wrap {
-  padding: 0.55rem 0 0.58rem;
+  padding: 0.5rem 0 0.55rem;
 }
 
 .disclosure-bar p {
   margin: 0;
-  font-size: 0.84rem;
+  font-size: 0.9rem;
   line-height: 1.45;
   color: var(--ink);
   max-width: 52rem;
@@ -299,6 +301,7 @@ main {
 
 .disclosure-bar a {
   font-weight: 600;
+  color: var(--sage-deep);
 }
 
 @media (max-width: 1080px) {
@@ -478,8 +481,8 @@ main {
 }
 
 .affiliate-line {
-  font-size: 0.88rem;
-  color: var(--ink-mute);
+  font-size: 0.9rem;
+  color: var(--ink);
   margin: 0;
   max-width: 36rem;
 }
@@ -639,7 +642,7 @@ main {
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--sage-deep);
   font-weight: 600;
 }
 
@@ -710,7 +713,7 @@ main {
 
 .section {
   padding: 2.4rem 0 2.8rem;
-  scroll-margin-top: calc(var(--header-h) + 0.8rem);
+  scroll-margin-top: var(--sticky-offset);
 }
 
 .section:nth-of-type(odd) {
@@ -734,7 +737,7 @@ main {
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--sage-deep);
   font-weight: 600;
   padding-top: 0.55rem;
 }
@@ -1010,7 +1013,7 @@ main {
 
 .guide-layout {
   display: grid;
-  grid-template-columns: 13.25rem minmax(0, var(--measure));
+  grid-template-columns: 13rem var(--measure);
   gap: 2.75rem 3.25rem;
   justify-content: center;
   align-items: start;
@@ -1020,7 +1023,7 @@ main {
 
 .toc {
   position: sticky;
-  top: calc(var(--header-h) + 1rem);
+  top: calc(var(--sticky-offset) + 0.35rem);
   padding-top: 0.2rem;
 }
 
@@ -1099,7 +1102,7 @@ main {
   line-height: 1.25;
   border-top: 1px solid var(--rule);
   letter-spacing: -0.02em;
-  scroll-margin-top: calc(var(--header-h) + 1rem);
+  scroll-margin-top: var(--sticky-offset);
   font-variation-settings: var(--display-soft);
 }
 
@@ -1250,7 +1253,7 @@ main {
   color: var(--ink);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .guide-layout {
     grid-template-columns: 1fr;
     gap: 1.2rem;
