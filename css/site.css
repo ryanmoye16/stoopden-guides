@@ -118,37 +118,19 @@ main {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
   text-decoration: none;
   color: var(--ink);
   min-width: 0;
+  flex-shrink: 0;
   position: relative;
   z-index: 3;
 }
 
-.logo-mark {
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.logo-text strong {
-  font-family: var(--font-display);
-  font-size: 1.18rem;
-  font-weight: 600;
-}
-
-.logo-text span {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
+.logo-img {
+  display: block;
+  height: 42px;
+  width: auto;
+  max-width: min(11.5rem, 58vw);
 }
 
 .nav-toggle {
@@ -236,6 +218,10 @@ main {
 }
 
 @media (max-width: 860px) {
+  .logo-img {
+    height: 34px;
+  }
+
   .nav-toggle-btn {
     display: inline-flex;
   }
@@ -749,6 +735,17 @@ main {
     grid-template-columns: 1fr;
     gap: 1.35rem;
   }
+}
+
+.footer-brand {
+  display: inline-block;
+  margin: 0 0 0.55rem;
+}
+
+.footer-logo {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 
 .site-footer h2 {
