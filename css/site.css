@@ -1577,8 +1577,9 @@ main {
   color: var(--ink);
 }
 
-.toc-next a::before {
+.toc .toc-next a::before {
   content: none;
+  display: none;
 }
 
 .toc ol {
@@ -1672,22 +1673,17 @@ main {
   background: var(--paper);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 1rem 1.15rem 1.05rem;
+  padding: 0.95rem 1.15rem 1.05rem;
   margin: 0 0 1.85rem;
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  gap: 0.35rem 1.1rem;
-  align-items: start;
 }
 
 .glance-label {
-  margin: 0;
+  margin: 0 0 0.7rem;
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--sage-deep);
-  padding-top: 0.15rem;
 }
 
 .glance ul {
@@ -1695,18 +1691,26 @@ main {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem 1.15rem;
 }
 
 .glance li,
 .glance li + li {
   margin: 0;
-  display: grid;
-  grid-template-columns: 4.4rem minmax(0, 1fr);
-  gap: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding-right: 0.9rem;
+  border-right: 1px solid var(--rule);
   font-size: 0.95rem;
   line-height: 1.4;
   color: var(--ink-soft);
+}
+
+.glance li:last-child {
+  border-right: 0;
+  padding-right: 0;
 }
 
 .glance strong {
@@ -1715,7 +1719,6 @@ main {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--sage);
-  padding-top: 0.16rem;
 }
 
 .prose h2 {
@@ -2018,6 +2021,23 @@ main {
 
   .glance {
     grid-template-columns: 1fr;
+  }
+
+  .glance ul {
+    grid-template-columns: 1fr;
+  }
+
+  .glance li,
+  .glance li + li {
+    border-right: 0;
+    padding-right: 0;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .glance li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
   }
 }
 
