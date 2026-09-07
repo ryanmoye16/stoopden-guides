@@ -2,11 +2,9 @@
 
 Everyday pet gear for home and on the go.
 
-Static HTML/CSS guide site for **US cats and small dogs** in apartments. Hubs: feed, play, groom, rest, travel. This is a GitHub Pages prototype — not the Shopify checkout.
+Static HTML/CSS guide site for **US cats and small dogs** in apartments. Hubs: feed, play, groom, rest, travel. GitHub Pages with custom domain **stoopden.com**. There is no storefront or checkout on this site.
 
-**Public URL:** [https://ryanmoye16.github.io/stoopden-guides/](https://ryanmoye16.github.io/stoopden-guides/)
-
-Shop (separate): [https://stoopden.com](https://stoopden.com)
+**Public URL:** [https://stoopden.com/](https://stoopden.com/)
 
 ## Pages
 
@@ -27,28 +25,21 @@ Shop (separate): [https://stoopden.com](https://stoopden.com)
 | `disclosure.html` | Amazon Associates |
 | `privacy.html` | Privacy |
 
-Shared stylesheet: `css/site.css`. Mobile nav is CSS-only (checkbox). Links are relative so the site works at the project Pages URL.
+Shared stylesheet: `css/site.css`. Mobile nav is CSS-only (checkbox). In-page links are relative so local preview matches production. Canonicals, sitemap, and robots use `https://stoopden.com/`.
 
 ## GitHub Pages (root of `main`)
 
-This repo should deploy from **branch `main`, folder `/` (root)**, build type **legacy**. Do **not** attach custom domain `stoopden.com` until Ryan says so. DNS for the shop stays untouched.
+Deploy from **branch `main`, folder `/` (root)**, build type **legacy**. Keep the root `CNAME` file set to `stoopden.com`. Keep `.nojekyll` so GitHub does not run Jekyll on the HTML.
 
-If Pages is not on yet (repo Settings → Pages):
+If Pages needs to be re-enabled (repo Settings → Pages):
 
 ```bash
-# Create Pages (empty repo / first enable)
-gh api --method POST /repos/ryanmoye16/stoopden-guides/pages \
-  -H "Accept: application/vnd.github+json" \
-  -f build_type=legacy \
-  -f source[branch]=main \
-  -f source[path]=/
-
-# Or update an existing Pages config
 gh api --method PUT /repos/ryanmoye16/stoopden-guides/pages \
   -H "Accept: application/vnd.github+json" \
   -f build_type=legacy \
   -f source[branch]=main \
-  -f source[path]=/
+  -f source[path]=/ \
+  -f cname=stoopden.com
 ```
 
 Confirm:
@@ -57,21 +48,15 @@ Confirm:
 gh api /repos/ryanmoye16/stoopden-guides/pages
 ```
 
-You want `html_url` = `https://ryanmoye16.github.io/stoopden-guides/` and `source.branch` = `main`, `source.path` = `/`. `cname` should be empty.
+You want custom domain `stoopden.com`, `source.branch` = `main`, `source.path` = `/`. Do not point canonicals or the sitemap at `github.io`.
 
-If `gh api` returns **403 Resource not accessible by integration**, the token has no Pages write scope (common for GitHub App tokens). Enable the same settings in the GitHub UI instead: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**. Leave the custom domain field empty.
-
-First build can take a few minutes. A `.nojekyll` file is in the root so GitHub does not run Jekyll on the HTML.
-
-### Custom domain — out of scope
-
-Do **not** add a `CNAME` file, do **not** set `stoopden.com` (or `www`) as a Pages custom domain, and do **not** change shop DNS, until Ryan explicitly asks.
+If `gh api` returns **403 Resource not accessible by integration**, enable the same settings in the GitHub UI: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**, custom domain `stoopden.com`.
 
 ## Amazon Associates (fill in later)
 
 Every page includes: **As an Amazon Associate I earn from qualifying purchases.**
 
-Product slots are labeled `ASIN_TODO_…` with a disabled **Amazon link coming** control. There are no live Amazon URLs and no Associates tag in this prototype.
+Product slots are labeled `ASIN_TODO_…` with a disabled **Amazon link coming** control. There are no live Amazon URLs and no Associates tag yet.
 
 When Ryan has a tag and real ASINs:
 
@@ -93,6 +78,7 @@ Open `http://127.0.0.1:8080/` — use a server so `guides/` relative CSS paths m
 - Tagline: Everyday pet gear for home and on the go.
 - Audience: US cats + small dogs / apartments.
 - Original commentary, not thin product grids.
+- No storefront CTAs. This repo is guides only.
 - No free-shipping promises.
-- No personal inbox on the site (shop contact is chat on stoopden.com).
+- No personal inbox on the site.
 - No fabricated reviews, prices, or ASINs.
