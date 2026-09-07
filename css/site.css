@@ -19,9 +19,11 @@
   --radius-sm: 0.7rem;
   --max: 74rem;
   --measure: 36.5rem;
-  --header-h: 2.95rem;
-  --disclosure-h: 1.4rem;
-  --sticky-offset: calc(var(--header-h) + var(--disclosure-h) + 0.35rem);
+  --header-h: 2.85rem;
+  --disclosure-h: 1.45rem;
+  /* Fallback until JS writes the measured sticky stack. */
+  --header-stack: calc(var(--header-h) + var(--disclosure-h) + 5px);
+  --sticky-offset: calc(var(--header-stack) + 1rem);
   --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
   --display: "SOFT" 22, "WONK" 0, "opsz" 144;
@@ -130,7 +132,7 @@ main {
   /* No backdrop-filter/transform: those trap position:fixed nav inside the header. */
   background: color-mix(in srgb, var(--cream) 94%, white);
   border-top: 3px solid var(--sage);
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 0;
   transition: box-shadow var(--ease), background var(--ease);
 }
 
@@ -252,6 +254,7 @@ main {
   text-decoration: none;
   color: var(--ink-soft);
   font-size: 0.92rem;
+  line-height: 1.15;
   padding: 0.4rem 0.58rem;
   border-radius: 999px;
 }
@@ -287,6 +290,7 @@ main {
 
 .disclosure-bar {
   border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   background: color-mix(in srgb, var(--sage-wash) 70%, var(--cream));
 }
 
@@ -706,15 +710,17 @@ main {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
-  margin: 0.85rem auto 1.45rem;
+  align-items: stretch;
+  margin: 0.85rem auto 0.55rem;
   overflow: visible;
+  scroll-margin-top: 0.5rem;
 }
 
 .hub-card {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto 1fr auto;
   column-gap: 0.55rem;
   row-gap: 0.18rem;
   text-decoration: none;
@@ -722,8 +728,9 @@ main {
   background: var(--paper);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 0.85rem 0.85rem 0.8rem;
-  min-height: 9.6rem;
+  padding: 0.85rem 0.85rem 0.75rem;
+  min-height: 10rem;
+  height: 100%;
   overflow: visible;
   z-index: 0;
   transition: transform var(--ease), border-color var(--ease);
@@ -759,16 +766,16 @@ main {
   grid-row: 1;
   display: grid;
   place-items: center;
-  width: 3.35rem;
-  height: 3.35rem;
-  border-radius: 0.7rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  border-radius: 0.65rem;
   color: var(--cream);
   background: var(--sage);
 }
 
 .hub-mark svg {
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 1.85rem;
+  height: 1.85rem;
 }
 
 .hub-num {
@@ -800,7 +807,8 @@ main {
   grid-column: 1 / -1;
   color: var(--ink-mute);
   font-size: 0.84rem;
-  line-height: 1.4;
+  line-height: 1.35;
+  min-height: 2.7em;
 }
 
 .hub-meta {
@@ -811,13 +819,15 @@ main {
   text-transform: uppercase;
   color: var(--sage-deep);
   align-self: end;
-  padding-top: 0.35rem;
+  padding-top: 0.45rem;
+  min-height: 1.2em;
 }
 
+/* Same 1px rule on every card. Identity is an inset accent, not a dashed stub. */
 .hub-card[data-hub="feed"] {
   background:
     linear-gradient(165deg, color-mix(in srgb, var(--sage) 16%, var(--paper)), var(--paper) 62%);
-  border-top: 4px solid var(--sage);
+  box-shadow: inset 0 3px 0 var(--sage);
 }
 
 .hub-card[data-hub="play"] {
@@ -830,33 +840,33 @@ main {
       rgba(112, 122, 91, 0.11) 10px
     ),
     var(--paper);
-  border-left: 4px solid var(--sage);
+  box-shadow: inset 3px 0 0 var(--sage);
 }
 
 .hub-card[data-hub="groom"] {
-  border-radius: 0.35rem 1.25rem 0.35rem 1.25rem;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--sage) 18%, var(--paper)) 1.25rem, var(--paper) 1.25rem);
+    linear-gradient(90deg, color-mix(in srgb, var(--sage) 18%, var(--paper)) 1.15rem, var(--paper) 1.15rem);
+  box-shadow: inset 0 -3px 0 var(--sage);
 }
 
 .hub-card[data-hub="rest"] {
-  border-radius: 1.65rem;
   background:
     radial-gradient(90% 80% at 100% 0%, rgba(112, 122, 91, 0.2), transparent 52%),
     var(--paper);
 }
 
 .hub-card[data-hub="travel"] {
-  border: 1.5px dashed var(--sage);
   background:
-    linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--cream-deep) 70%, var(--paper)));
+    linear-gradient(90deg, transparent calc(100% - 0.7rem), color-mix(in srgb, var(--sage) 18%, var(--paper)) calc(100% - 0.7rem)),
+    linear-gradient(180deg, var(--paper), color-mix(in srgb, var(--cream-deep) 45%, var(--paper)));
+  box-shadow: inset -3px 0 0 var(--sage);
 }
 
 .hub-card[data-hub="feed"] .hub-mark { background: var(--sage); }
-.hub-card[data-hub="play"] .hub-mark { background: var(--sage-deep); border-radius: 999px; }
-.hub-card[data-hub="groom"] .hub-mark { border-radius: 0.25rem 0.85rem; }
-.hub-card[data-hub="rest"] .hub-mark { border-radius: 999px 999px 0.4rem 999px; background: color-mix(in srgb, var(--sage) 82%, var(--ink)); }
-.hub-card[data-hub="travel"] .hub-mark { border-radius: 0.45rem; outline: 1px dashed color-mix(in srgb, var(--sage) 55%, var(--paper)); outline-offset: 2px; }
+.hub-card[data-hub="play"] .hub-mark { background: var(--sage-deep); }
+.hub-card[data-hub="groom"] .hub-mark { background: color-mix(in srgb, var(--sage) 88%, var(--ink)); }
+.hub-card[data-hub="rest"] .hub-mark { background: color-mix(in srgb, var(--sage) 82%, var(--ink)); }
+.hub-card[data-hub="travel"] .hub-mark { background: var(--sage-deep); }
 
 @media (max-width: 980px) {
   .hub-grid {
@@ -864,10 +874,27 @@ main {
   }
 }
 
+@media (max-width: 800px) {
+  .hub-grid {
+    grid-template-columns: 1fr 1fr;
+    margin: 0.85rem auto 0.55rem;
+  }
+
+  .hub-card[data-hub="travel"] {
+    grid-column: 1 / -1;
+    min-height: 8.4rem;
+  }
+}
+
 @media (max-width: 620px) {
   .hub-grid {
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .hub-card[data-hub="travel"] {
+    grid-column: 1 / -1;
+    min-height: 8.4rem;
   }
 
   .hub-card {
@@ -883,7 +910,7 @@ main {
 /* Issue index */
 
 .issue-index {
-  padding: 0 0 0.35rem;
+  padding: 0 0 1rem;
 }
 
 .issue-index .wrap {
@@ -1000,13 +1027,12 @@ main {
 /* Guide index */
 
 .section {
-  padding: 1.55rem 0 1.85rem;
-  scroll-margin-top: var(--sticky-offset);
+  padding: 1.35rem 0 1.6rem;
   position: relative;
 }
 
 .issue-index + .section {
-  padding-top: 1.2rem;
+  padding-top: 1.15rem;
 }
 
 .section#feed,
@@ -1226,9 +1252,20 @@ main {
   transform: translateX(4px);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .guide-grid {
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .disclosure-bar p {
+    font-size: 0.7rem;
+    line-height: 1.28;
+  }
+}
+
+@media (max-width: 720px) {
+  .guide-grid {
     gap: 0.8rem;
   }
 
@@ -1259,6 +1296,10 @@ main {
   .guide-hero,
   .page-hero {
     padding-top: 1.15rem;
+  }
+
+  .guide-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1483,8 +1524,8 @@ main {
 
 .guide-layout {
   display: grid;
-  grid-template-columns: 16.5rem minmax(0, 1fr);
-  gap: 1.6rem 2.4rem;
+  grid-template-columns: 15.25rem minmax(0, 1fr);
+  gap: 1.5rem 2.1rem;
   justify-content: stretch;
   align-items: start;
   width: min(100% - 2.5rem, 72rem);
@@ -1493,15 +1534,15 @@ main {
 
 .guide-spread {
   display: grid;
-  grid-template-columns: 16.5rem minmax(0, 1fr);
-  gap: 1.6rem 2.4rem;
+  grid-template-columns: 15.25rem minmax(0, 1fr);
+  gap: 1.5rem 2.1rem;
   align-items: start;
-  padding-top: 1.25rem;
+  padding-top: 0.75rem;
 }
 
 .guide-rail {
   position: sticky;
-  top: calc(var(--sticky-offset) + 0.45rem);
+  top: var(--sticky-offset);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -1546,11 +1587,11 @@ main {
 
 .toc {
   position: sticky;
-  top: calc(var(--sticky-offset) + 0.45rem);
+  top: var(--sticky-offset);
   background: var(--paper);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
-  padding: 0.95rem 0.95rem 1.35rem;
+  padding: 0.95rem 0.95rem 1.05rem;
   box-shadow: var(--shadow);
 }
 
@@ -1640,7 +1681,7 @@ main {
 .toc-next {
   margin: 0.85rem 0 0;
   padding-top: 0.75rem;
-  border-top: 1px dashed color-mix(in srgb, var(--sage) 45%, var(--rule));
+  border-top: 1px solid var(--rule);
   font-size: 0.78rem;
   line-height: 1.4;
   color: var(--ink-mute);
@@ -1811,7 +1852,7 @@ main {
   line-height: 1.25;
   border-top: 1px solid var(--rule);
   letter-spacing: -0.02em;
-  scroll-margin-top: var(--sticky-offset);
+  scroll-margin-top: 0.2rem;
   font-variation-settings: var(--display-soft);
 }
 
@@ -1983,7 +2024,7 @@ main {
   color: var(--ink);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 800px) {
   .guide-hero-inner:has(.guide-folio) {
     grid-template-columns: 1fr;
     width: min(100% - 2.5rem, var(--measure));
@@ -2173,7 +2214,7 @@ main {
 
 .product-slot-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
   gap: 0.85rem;
   margin: 1.7rem 0;
 }
@@ -2221,7 +2262,7 @@ main {
 }
 
 .product-slot::after {
-  content: "Slot reserved";
+  content: "Honest hold";
   order: -1;
   align-self: flex-start;
   margin: -1.95rem 0 0.7rem auto;
@@ -2257,6 +2298,25 @@ main {
 }
 
 .product-slot__id code {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.guide--method .product-slot__id code {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.74rem;
   letter-spacing: 0;
