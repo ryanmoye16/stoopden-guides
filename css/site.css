@@ -282,6 +282,27 @@ main {
   display: none;
 }
 
+.disclosure-bar {
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--sage-wash) 70%, var(--cream));
+}
+
+.disclosure-bar .wrap {
+  padding: 0.55rem 0 0.58rem;
+}
+
+.disclosure-bar p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--ink);
+  max-width: 52rem;
+}
+
+.disclosure-bar a {
+  font-weight: 600;
+}
+
 @media (max-width: 1080px) {
   .logo-img {
     height: 2.7rem;
@@ -1526,6 +1547,10 @@ main {
 @supports not (background: color-mix(in srgb, white 50%, black)) {
   .site-header {
     background: rgba(252, 247, 238, 0.94);
+  }
+
+  .disclosure-bar {
+    background: #e8eee4;
   }
 
   .site-footer p,
