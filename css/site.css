@@ -2263,7 +2263,8 @@ main {
   display: none;
 }
 
-.product-slot__id {
+.product-slot__id,
+.prose .product-slot .product-slot__id {
   grid-column: 2;
   grid-row: 1;
   display: flex;
@@ -2275,6 +2276,7 @@ main {
   align-self: start;
   margin: 0.2rem 0 0;
   font-size: 0.72rem;
+  line-height: 1.2;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-mute);
@@ -2332,8 +2334,8 @@ main {
   font-style: italic;
 }
 
-.prose .product-slot p,
-.product-slot p {
+.prose .product-slot > p:not(.product-slot__id),
+.product-slot > p:not(.product-slot__id) {
   grid-column: 1 / -1;
   font-family: var(--font-body);
   font-size: 0.98rem;
@@ -2341,11 +2343,12 @@ main {
   margin: 0;
 }
 
-.product-slot > p:not(:last-child) {
+.product-slot > p:not(.product-slot__id):not(:last-child) {
   grid-row: 3;
 }
 
 .product-slot > p:last-child {
+  grid-column: 1 / -1;
   grid-row: 4;
   margin: 0.85rem 0 0;
 }
