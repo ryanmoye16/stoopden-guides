@@ -1448,6 +1448,46 @@ main {
   font-weight: 600;
 }
 
+.toc-facts {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+  padding: 0 0 0.85rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.toc-facts div {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+
+.toc-facts dt {
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.toc-facts dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.toc-sections-label {
+  margin: 0 0 0.15rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
 .toc ol {
   list-style: none;
   margin: 0;
@@ -1514,12 +1554,20 @@ main {
   counter-reset: chapter;
 }
 
+.prose > p:first-of-type {
+  font-size: 1.12em;
+  line-height: 1.48;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
+  border-bottom: 1px solid var(--rule);
+}
+
 .prose > p:first-of-type::first-letter {
   font-family: var(--font-display);
   float: left;
-  font-size: 3.2em;
+  font-size: 3.35em;
   font-weight: 500;
-  line-height: 0.78;
+  line-height: 0.76;
   padding: 0.12em 0.12em 0 0;
   color: var(--sage-deep);
   font-style: italic;
@@ -1587,18 +1635,20 @@ main {
 }
 
 .prose blockquote {
-  margin: 2rem 0;
-  padding: 0.2rem 0.4rem 0.2rem 0;
+  margin: 2.15rem 0;
+  padding: 1.1rem 0 1.15rem 1.15rem;
   border: 0;
+  border-left: 3px solid var(--sage);
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-style: italic;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.32;
   letter-spacing: -0.02em;
   font-variation-settings: var(--display-soft);
   text-wrap: pretty;
+  background: linear-gradient(90deg, var(--sage-wash), transparent 70%);
 }
 
 .prose blockquote::before {
@@ -1743,6 +1793,20 @@ main {
 
   .toc::before {
     margin-bottom: 0.45rem;
+  }
+
+  .toc-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .toc-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.12rem;
+  }
+
+  .toc-sections-label {
+    margin-top: 0.15rem;
   }
 
   .toc ol {
