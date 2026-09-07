@@ -528,8 +528,16 @@ main {
   box-shadow: var(--shadow);
 }
 
-.hero-panel::before {
+.hero-panel::before,
+.hero-panel::after {
   content: none;
+  display: none;
+  background: none;
+  inset: auto;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .hero-panel-head {
@@ -698,7 +706,7 @@ main {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
-  margin: 0.7rem auto 1.75rem;
+  margin: 0.85rem auto 2.35rem;
 }
 
 .hub-card {
@@ -858,7 +866,7 @@ main {
 @media (max-width: 620px) {
   .hub-grid {
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hub-card {
@@ -874,7 +882,7 @@ main {
 /* Issue index */
 
 .issue-index {
-  padding: 0 0 1.15rem;
+  padding: 0.15rem 0 1.45rem;
 }
 
 .issue-index .wrap {
