@@ -2384,7 +2384,10 @@ main {
 
 .product-slot__hold,
 .product-slot__hold:hover,
-.product-slot__hold:focus {
+.product-slot__hold:focus,
+.prose p.product-slot__hold,
+.prose p.product-slot__hold:hover,
+.prose p.product-slot__hold:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
