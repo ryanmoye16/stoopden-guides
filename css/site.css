@@ -259,15 +259,19 @@ main {
   line-height: 1.15;
   padding: 0.4rem 0.58rem;
   border-radius: 999px;
+  background: transparent;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
+.site-nav a:hover {
   color: var(--ink);
+  background: var(--paper);
 }
 
-.site-nav a[aria-current="page"] {
-  background: var(--sage-wash);
+.site-nav a[aria-current="page"],
+.site-nav a[aria-current="page"]:hover {
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1px var(--sage);
 }
 
 .nav-hubs {
@@ -397,6 +401,7 @@ main {
   .nav-hubs a:hover {
     background: transparent;
     color: var(--sage-deep);
+    box-shadow: none;
   }
 
   .nav-meta {
@@ -410,12 +415,20 @@ main {
   }
 
   .nav-meta a,
-  .nav-meta a:first-child {
+  .nav-meta a:first-child,
+  .nav-meta a:hover {
     margin: 0;
     padding: 0.35rem 0;
     border: 0;
+    border-radius: 0;
     font-size: 1.05rem;
     color: var(--ink-soft);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-meta a:hover {
+    color: var(--ink);
   }
 
   .nav-close {
@@ -736,7 +749,7 @@ main {
   overflow: visible;
   z-index: 0;
   box-shadow: none;
-  transition: transform var(--ease), border-color var(--ease);
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
 }
 
 .hub-card::after,
@@ -753,29 +766,14 @@ main {
   z-index: 2;
 }
 
-.hub-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--sage);
-  z-index: -1;
-  transform: translate(0, 0);
-  opacity: 0;
-  transition: transform var(--ease), opacity var(--ease);
-}
-
 .hub-card:hover,
 .hub-card:focus-visible {
-  transform: translate(-5px, -5px);
+  z-index: 1;
+  transform: translateY(-3px);
   border-color: var(--sage);
   color: var(--ink);
-}
-
-.hub-card:hover::before,
-.hub-card:focus-visible::before {
-  opacity: 1;
-  transform: translate(8px, 8px);
+  background: var(--paper);
+  box-shadow: var(--shadow-hover);
 }
 
 .hub-mark {
@@ -1113,32 +1111,17 @@ main {
   height: auto;
   overflow: visible;
   box-shadow: none;
-  transition: transform var(--ease), border-color var(--ease);
-}
-
-.guide-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: var(--sage);
-  z-index: -1;
-  opacity: 0;
-  transform: translate(0, 0);
-  transition: transform var(--ease), opacity var(--ease);
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
 }
 
 .guide-card:hover,
 .guide-card:focus-visible {
-  transform: translate(-6px, -6px);
+  z-index: 1;
+  transform: translateY(-3px);
   border-color: var(--sage);
-  color: inherit;
-}
-
-.guide-card:hover::before,
-.guide-card:focus-visible::before {
-  opacity: 1;
-  transform: translate(10px, 10px);
+  color: var(--ink);
+  background: var(--paper);
+  box-shadow: var(--shadow-hover);
 }
 
 .guide-card .kicker {
@@ -2399,7 +2382,9 @@ main {
   margin: 0.85rem 0 0;
 }
 
-.product-slot__hold {
+.product-slot__hold,
+.product-slot__hold:hover,
+.product-slot__hold:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -2452,7 +2437,11 @@ main {
 }
 
 .btn--amazon.is-disabled,
-.btn.is-disabled {
+.btn.is-disabled,
+.btn--amazon.is-disabled:hover,
+.btn.is-disabled:hover,
+.btn--amazon.is-disabled:focus,
+.btn.is-disabled:focus {
   background: color-mix(in srgb, var(--cream-deep) 78%, var(--paper));
   color: var(--ink-soft);
   border: 1px solid var(--rule);
@@ -2461,6 +2450,8 @@ main {
   user-select: none;
   border-radius: 999px;
   opacity: 1;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn--solid {
@@ -2482,7 +2473,8 @@ main {
 }
 
 .btn--ghost:hover {
-  background: var(--sage-wash);
+  background: var(--paper);
+  border-color: var(--ink);
   color: var(--ink);
 }
 
@@ -2621,14 +2613,8 @@ main {
   .hub-card:focus-visible,
   .guide-card:focus-visible {
     transform: none;
-  }
-
-  .hub-card:hover::before,
-  .guide-card:hover::before,
-  .hub-card:focus-visible::before,
-  .guide-card:focus-visible::before {
-    transform: none;
-    opacity: 0;
+    background: var(--paper);
+    box-shadow: var(--shadow-hover);
   }
 }
 
