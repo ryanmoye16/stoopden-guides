@@ -187,10 +187,10 @@ main {
   color: var(--sage-deep);
 }
 
+/* Hidden on desktop so it is not a silent Tab stop. On mobile it stays
+   keyboard-operable; :focus-visible is painted on the hamburger label. */
 .nav-toggle {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .nav-toggle-btn {
@@ -328,6 +328,30 @@ main {
 
   .logo-issue {
     display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .nav-toggle:focus {
+    outline: none;
+  }
+
+  .nav-toggle:focus-visible + .nav-toggle-btn {
+    outline: 2px solid var(--sage);
+    outline-offset: 3px;
   }
 
   .nav-toggle-btn {
