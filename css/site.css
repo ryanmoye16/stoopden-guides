@@ -1764,6 +1764,11 @@ main {
   max-width: 18ch;
 }
 
+.page--disclosure .page-hero h1,
+.page--privacy .page-hero h1 {
+  max-width: 28ch;
+}
+
 .page-spread .lede {
   max-width: 46rem;
 }
@@ -2520,18 +2525,21 @@ main {
 
 .site-footer h2 {
   font-family: var(--font-body);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 0 0 0.45rem;
-  color: color-mix(in srgb, var(--cream-footer) 88%, var(--sage));
+  margin: 0 0 0.65rem;
+  padding: 0 0 0.38rem;
+  width: fit-content;
+  color: var(--cream);
+  border-bottom: 1px solid color-mix(in srgb, var(--sage) 62%, var(--cream));
 }
 
 .site-footer p,
 .site-footer li {
-  font-size: 0.9rem;
-  color: color-mix(in srgb, var(--cream-footer) 96%, white);
+  font-size: 0.92rem;
+  color: var(--cream);
   line-height: 1.45;
 }
 
@@ -2551,39 +2559,46 @@ main {
 }
 
 .site-footer a {
-  color: var(--cream-footer);
+  color: var(--cream);
   text-decoration: none;
 }
 
 .site-footer a:hover {
   text-decoration: underline;
-  color: var(--cream-footer);
+  color: var(--cream);
 }
 
 .legal {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid color-mix(in srgb, var(--cream-footer) 28%, transparent);
-  font-size: 0.82rem;
+  margin-top: 1.05rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--cream) 34%, transparent);
+  font-size: 0.9rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 1.35rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.28rem;
 }
 
 .legal p {
   margin: 0;
-  max-width: none;
-  color: var(--cream-footer);
+  max-width: 46rem;
+  color: var(--cream);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .wrap {
+  .wrap,
+  .wrap--narrow {
     width: min(100% - 1.75rem, var(--max));
+  }
+
+  .page-rail .toc-facts {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
   }
 }
 
@@ -2630,9 +2645,11 @@ main {
     background: #e8eee4;
   }
 
+  .site-footer h2,
   .site-footer p,
   .site-footer li,
+  .site-footer a,
   .legal p {
-    color: #efe8dc;
+    color: #fcf7ee;
   }
 }
