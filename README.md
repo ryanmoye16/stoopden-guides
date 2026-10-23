@@ -52,18 +52,31 @@ You want custom domain `stoopden.com`, `source.branch` = `main`, `source.path` =
 
 If `gh api` returns **403 Resource not accessible by integration**, enable the same settings in the GitHub UI: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**, custom domain `stoopden.com`.
 
-## Amazon Associates (fill in later)
+## Amazon Associates
 
 Every page includes: **As an Amazon Associate I earn from qualifying purchases.**
 
-Product slots keep `ASIN_TODO_…` IDs in the HTML for editors. Public cards show a **Criteria only** pill and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL. There is no Associates tag yet.
+Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-When Ryan has a tag and real ASINs:
+Switch-on status (2026-10-23): 6 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
-1. Put the tag in one place (a short note in this README is enough until you add a tiny script). Example tag format: `yourtag-20` — do not commit a guessed tag.
-2. Replace each `ASIN_TODO_…` with a real ASIN that matches that slot’s type-level criteria (`guides/how-we-pick.html`).
-3. Change the disabled control to a real `https://www.amazon.com/dp/ASIN/?tag=YOURTAG` link (or the equivalent Associates link builder).
-4. Do not invent review counts, star ratings, or prices to “finish” a slot.
+| Slot | Pick | ASIN |
+| --- | --- | --- |
+| Gravity feeder | Petmate Pet Café Feeder | B004IJ6ZZ8 |
+| Water fountain | Catit Flower Fountain, 3 L | B0146QXOB0 |
+| Scratcher sofa | PetFusion Ultimate Cat Scratcher Lounge | B004X6UEH6 |
+| Sisal post | SmartCat Ultimate Scratching Post, 32 in | B000634MH8 |
+| Waste-bag clip | Earth Rated Leash Dispenser | B00FGFC4IK |
+| Covered litter | Van Ness Large Enclosed Corner Pan CP9 | B01HI9QDBA |
+
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 13 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
+
+To wire a remaining slot:
+
+1. Confirm the ASIN from a real source and record that source (never guess; watch for accessory look-alike ASINs).
+2. Replace the slot's `ASIN_TODO_…` ID with the real ASIN that matches that slot's type-level criteria (`guides/how-we-pick.html`), name the product in the card, and ground the copy in real owner feedback.
+3. Change the disabled hold to a real `https://www.amazon.com/dp/ASIN?tag=stoopden-20` link styled `product-slot__link`.
+4. Do not invent review counts, star ratings, or prices to “finish” a slot. No displayed prices.
 
 ## Local preview
 
