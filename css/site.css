@@ -7,7 +7,7 @@
   --rule: #e2d6c6;
   --ink: #2a261c;
   --ink-soft: rgba(42, 38, 28, 0.74);
-  --ink-mute: rgba(42, 38, 28, 0.54);
+  --ink-mute: rgba(42, 38, 28, 0.68);
   --ink-footer: #2b2925;
   --sage: #707a5b;
   --sage-deep: #5a6f54;
@@ -25,6 +25,34 @@
   --header-stack: calc(var(--header-h) + var(--disclosure-h) + 8px);
   --sticky-gap: 0.7rem;
   --sticky-offset: calc(var(--header-stack) + var(--sticky-gap));
+  /* Shared design tokens — same scale names/values as Home Office Stack (sibling site).
+     Brand layer differs (warm paper/sage here, dark violet there); components speak
+     the same token language: --fs-*, --space-*, --radius-*, --shadow-*, --tap. */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --radius-s: 0.7rem;
+  --radius-m: 1.15rem;
+  --radius-l: 1.6rem;
+  --shadow-1: 0 18px 40px rgba(42, 38, 28, 0.07);
+  --shadow-2: 0 22px 48px rgba(42, 38, 28, 0.12);
+  --tap: 44px;
+  --clay: #9c4a2f;
+  --clay-wash: rgba(156, 74, 47, 0.07);
   --font-body: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
   --display: "SOFT" 22, "WONK" 0, "opsz" 144;
@@ -253,11 +281,14 @@ main {
 }
 
 .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
   text-decoration: none;
   color: var(--ink-soft);
   font-size: 0.92rem;
   line-height: 1.15;
-  padding: 0.4rem 0.58rem;
+  padding: 0.5rem 0.72rem;
   border-radius: 999px;
   background: transparent;
 }
@@ -1611,7 +1642,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--sage);
+  color: var(--sage-deep);
 }
 
 .toc-facts dd {
@@ -1677,7 +1708,7 @@ main {
   color: var(--ink-mute);
   font-size: 0.84rem;
   line-height: 1.35;
-  padding: 0.48rem 0;
+  padding: 0.6rem 0;
   border-left: 0;
   margin-left: 0;
 }
@@ -2454,8 +2485,9 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: var(--tap);
   border-radius: 999px;
-  padding: 0.62rem 1.15rem;
+  padding: 0.7rem 1.2rem;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -2582,6 +2614,11 @@ main {
   text-decoration: none;
 }
 
+.site-footer li a {
+  display: inline-block;
+  padding: 0.34rem 0;
+}
+
 .site-footer a:hover {
   text-decoration: underline;
   color: var(--cream);
@@ -2665,4 +2702,72 @@ main {
   .legal p {
     color: #fcf7ee;
   }
+}
+
+/* Buy / skip panels — the guide counterpart to Home Office Stack's pros/cons
+   panels: tinted panel + border + radius, with a ✓ / ✕ marker on the head. */
+
+.prose .buy-panel-head,
+.prose .skip-panel-head {
+  margin-bottom: 0.45rem;
+}
+
+.prose .buy-panel-head::before {
+  content: "✓ ";
+  color: var(--sage-deep);
+  font-weight: 700;
+}
+
+.prose .skip-panel-head::before {
+  content: "✕ ";
+  color: var(--clay);
+  font-weight: 700;
+}
+
+.prose ul.buy-panel,
+.prose ul.skip-panel {
+  list-style: none;
+  border-radius: var(--radius-s);
+  padding: 1rem 1.15rem 1.05rem;
+  margin: 0 0 1.5rem;
+}
+
+.prose ul.buy-panel {
+  background: var(--sage-wash);
+  border: 1px solid color-mix(in srgb, var(--sage) 30%, var(--rule));
+}
+
+.prose ul.skip-panel {
+  background: var(--clay-wash);
+  border: 1px solid color-mix(in srgb, var(--clay) 26%, var(--rule));
+}
+
+.prose ul.buy-panel li,
+.prose ul.skip-panel li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.prose ul.buy-panel li:last-child,
+.prose ul.skip-panel li:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul.buy-panel li::before,
+.prose ul.skip-panel li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+
+.prose ul.buy-panel li::before {
+  content: "✓";
+  color: var(--sage-deep);
+}
+
+.prose ul.skip-panel li::before {
+  content: "✕";
+  color: var(--clay);
 }
