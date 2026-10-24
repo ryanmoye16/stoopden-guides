@@ -58,7 +58,7 @@ Every page includes: **As an Amazon Associate I earn from qualifying purchases.*
 
 Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-Switch-on status (2026-10-24): 11 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
+Switch-on status (2026-10-24): 13 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
 | Slot | Pick | ASIN |
 | --- | --- | --- |
@@ -73,8 +73,10 @@ Switch-on status (2026-10-24): 11 of 19 slots are wired with sourced ASINs (sour
 | Grooming glove | DELOMO Pet Grooming Glove (1 pack, right-hand) | B01N66Y1IK |
 | Walk bottle | Dexas Snack-DuO with Companion Cup | B01ARNIHPE |
 | Plush round bed | Best Friends by Sheri Donut Cuddler, Medium 30 in, Frost | B07P6FS2VT |
+| Flat pillow bed | Brindle Soft Shredded Memory Foam Pillow Bed, 34×22 in, Khaki | B00SG1DX4A |
+| Pet stairs | Best Pet Supplies Foam Pet Steps, 3-Step 16.5 in, Ash Gray Linen | B07HCXV4X5 |
 
-A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 8 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 6 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
 
 To wire a remaining slot:
 
