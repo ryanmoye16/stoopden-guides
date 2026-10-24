@@ -58,7 +58,7 @@ Every page includes: **As an Amazon Associate I earn from qualifying purchases.*
 
 Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-Switch-on status (2026-10-23): 6 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
+Switch-on status (2026-10-24): 8 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
 | Slot | Pick | ASIN |
 | --- | --- | --- |
@@ -68,8 +68,10 @@ Switch-on status (2026-10-23): 6 of 19 slots are wired with sourced ASINs (sourc
 | Sisal post | SmartCat Ultimate Scratching Post, 32 in | B000634MH8 |
 | Waste-bag clip | Earth Rated Leash Dispenser | B00FGFC4IK |
 | Covered litter | Van Ness Large Enclosed Corner Pan CP9 | B01HI9QDBA |
+| Corner groomer | Catit Senses 2.0 Self Groomer | B00D3NI2PG |
+| Litter mat | Gorilla Grip Cat Litter Mat, 40×28 in | B08QNGWF2M |
 
-A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 13 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 11 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
 
 To wire a remaining slot:
 
