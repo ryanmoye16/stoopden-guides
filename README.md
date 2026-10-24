@@ -58,7 +58,7 @@ Every page includes: **As an Amazon Associate I earn from qualifying purchases.*
 
 Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-Switch-on status (2026-10-24): 10 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
+Switch-on status (2026-10-24): 11 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
 | Slot | Pick | ASIN |
 | --- | --- | --- |
@@ -72,8 +72,9 @@ Switch-on status (2026-10-24): 10 of 19 slots are wired with sourced ASINs (sour
 | Litter mat | Gorilla Grip Cat Litter Mat, 40×28 in | B08QNGWF2M |
 | Grooming glove | DELOMO Pet Grooming Glove (1 pack, right-hand) | B01N66Y1IK |
 | Walk bottle | Dexas Snack-DuO with Companion Cup | B01ARNIHPE |
+| Plush round bed | Best Friends by Sheri Donut Cuddler, Medium 30 in, Frost | B07P6FS2VT |
 
-A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 9 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 8 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source.
 
 To wire a remaining slot:
 
