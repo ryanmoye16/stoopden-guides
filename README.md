@@ -58,13 +58,14 @@ Every page includes: **As an Amazon Associate I earn from qualifying purchases.*
 
 Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-Switch-on status (2026-10-25): 15 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
+Switch-on status (2026-10-25): 16 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
 | Slot | Pick | ASIN |
 | --- | --- | --- |
 | Gravity feeder | Petmate Pet Café Feeder | B004IJ6ZZ8 |
 | Stainless dish beside feeder | Hepper NomNom, White | B00K0SH8XY |
 | Water fountain | Catit Flower Fountain, 3 L | B0146QXOB0 |
+| Water bowl | Americat Company Stainless Steel Cat Bowl | B084T76QHX |
 | Scratcher sofa | PetFusion Ultimate Cat Scratcher Lounge | B004X6UEH6 |
 | Sisal post | SmartCat Ultimate Scratching Post, 32 in | B000634MH8 |
 | Waste-bag clip | Earth Rated Leash Dispenser | B00FGFC4IK |
@@ -78,7 +79,7 @@ Switch-on status (2026-10-25): 15 of 19 slots are wired with sourced ASINs (sour
 | Pet stairs | Best Pet Supplies Foam Pet Steps, 3-Step 16.5 in, Ash Gray Linen | B07HCXV4X5 |
 | Mouse hunt box | SmartCat Peek-a-Prize Toy Box (large) | B0006VMN4O |
 
-A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 4 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source, or, for the DoggoRamps ramp (ASIN already sourced), until Ryan's price-level decision.
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 3 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source, or, for the DoggoRamps ramp (ASIN already sourced), until Ryan's price-level decision.
 
 To wire a remaining slot:
 
