@@ -58,7 +58,7 @@ Every page includes: **As an Amazon Associate I earn from qualifying purchases.*
 
 Associates tag: **stoopden-20** (Ryan's real tag — never commit a guessed tag).
 
-Switch-on status (2026-10-25): 14 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
+Switch-on status (2026-10-25): 15 of 19 slots are wired with sourced ASINs (sources recorded in `~/workspace/affiliate-sites/stoopden-product-picks.md`):
 
 | Slot | Pick | ASIN |
 | --- | --- | --- |
@@ -76,8 +76,9 @@ Switch-on status (2026-10-25): 14 of 19 slots are wired with sourced ASINs (sour
 | Plush round bed | Best Friends by Sheri Donut Cuddler, Medium 30 in, Frost | B07P6FS2VT |
 | Flat pillow bed | Brindle Soft Shredded Memory Foam Pillow Bed, 34×22 in, Khaki | B00SG1DX4A |
 | Pet stairs | Best Pet Supplies Foam Pet Steps, 3-Step 16.5 in, Ash Gray Linen | B07HCXV4X5 |
+| Mouse hunt box | SmartCat Peek-a-Prize Toy Box (large) | B0006VMN4O |
 
-A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 5 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source, or, for the DoggoRamps ramp (ASIN already sourced), until Ryan's price-level decision.
+A wired card is labeled **Named pick**, names the product, and links to `https://www.amazon.com/dp/ASIN?tag=stoopden-20`. The other 4 slots keep their `ASIN_TODO_…` IDs, a **Criteria only** pill, and a **Link when we name one** hold — not a clickable button, and not a live Amazon URL — until their ASIN is verified from a recorded source, or, for the DoggoRamps ramp (ASIN already sourced), until Ryan's price-level decision.
 
 To wire a remaining slot:
 
