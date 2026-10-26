@@ -27,6 +27,8 @@ Static HTML/CSS guide site for **US cats and small dogs** in apartments. Hubs: f
 
 Shared stylesheet: `css/site.css`. Mobile nav is CSS-only (checkbox). `js/site.js` is optional: it highlights the in-page table of contents and a scrolled header. The site still works with JavaScript off. In-page links are relative so local preview matches production. Canonicals, sitemap, and robots use `https://stoopden.com/`. Brand wordmark, inverse, and favicon live in `assets/`.
 
+**Sitemap lastmod:** before publishing any page change, run `python3 scripts/update_sitemap_lastmod.py` — it stamps each sitemap URL's `<lastmod>` from that file's most recent git commit date, so the sitemap always carries real last-modified dates.
+
 ## GitHub Pages (root of `main`)
 
 Deploy from **branch `main`, folder `/` (root)**, build type **legacy**. Keep the root `CNAME` file set to `stoopden.com`. Keep `.nojekyll` so GitHub does not run Jekyll on the HTML.
