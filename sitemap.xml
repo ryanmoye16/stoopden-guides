@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://stoopden.com/</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://stoopden.com/about.html</loc><lastmod>2026-10-28</lastmod></url>
-  <url><loc>https://stoopden.com/feed.html</loc><lastmod>2026-11-02</lastmod></url>
+  <url><loc>https://stoopden.com/feed.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://stoopden.com/groom.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://stoopden.com/play.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://stoopden.com/rest.html</loc><lastmod>2026-11-03</lastmod></url>
@@ -95,4 +95,5 @@
   <url><loc>https://stoopden.com/guides/keeping-cat-off-counters-small-apartment.html</loc><lastmod>2026-11-02</lastmod></url>
   <url><loc>https://stoopden.com/guides/senior-small-dog-feeding-small-apartment.html</loc><lastmod>2026-11-03</lastmod></url>
   <url><loc>https://stoopden.com/guides/puppy-feeding-small-apartment.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://stoopden.com/guides/small-dog-feeding-small-apartment.html</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>
